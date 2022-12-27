@@ -1,0 +1,57 @@
+#include <stdio.h>
+int main () {
+    int arr[4] = {1, 2, 3, 4};
+    int j = 0;
+    
+    // 冒泡排序
+    while (j < 3) {
+        for (int i = 3; i > j; i--) {
+            if(arr[i] > arr[i - 1]) {
+                // 交换
+                int temp = arr[i - 1];
+                arr[i - 1] = arr[i];
+                arr[i] = temp;
+            }
+         }
+        j++;
+    }
+
+    int i = 0;
+    while(i < 4) {
+        printf("%d\n", arr[i]);
+        i++;
+    }
+
+    // 菲波那切数列
+    int arrf[5] = {1, 1};
+    for (int i = 2; i < 5; i++) {
+        arrf[i] = arrf[i - 1] + arrf[i - 2];
+        printf("第%-2d个斐波那契数：%d\n", i + 1, arrf[i]);
+    }
+
+    // 打家劫舍（LeetCode算法）
+    int LeetCode[] = {2,7,9,3,1};
+    int size = 5;
+    int dp[size];
+    int result;
+    dp[1] = LeetCode[0];
+    dp[2] = LeetCode[1] > LeetCode[0] ? LeetCode[0] : LeetCode[1];
+    int ii = 3;
+    while (ii <= size) {
+        dp[ii] = dp[ii - 1] > LeetCode[ii - 1] + dp[ii - 2] ? dp[ii - 1] : LeetCode[ii - 1] + dp[ii - 2];
+        result = dp[ii];
+        ii ++;
+    }
+    printf("偷盗的最大金额是%d\n", result);
+
+    // 递归实现斐波那契数列
+    int recursion (int n) {
+        if (n == 1 || n == 2) {
+            return 1;  // 结束点
+        }
+        // 递归
+        return recursion(n - 1) + recursion(n - 2);
+    }
+
+    printf("第%-2d个斐波那契数：%d\n", 5, recursion(5));
+}

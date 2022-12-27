@@ -1,0 +1,3 @@
+C:/Users/lenovo/Desktop/Clang/cmake-build-debug/CMakeFiles/Clang.dir
+C:/Users/lenovo/Desktop/Clang/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lenovo/Desktop/Clang/cmake-build-debug/CMakeFiles/rebuild_cache.dir
